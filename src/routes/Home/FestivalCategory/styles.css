@@ -1,0 +1,16 @@
+.container {
+  margin: 100px;
+}
+.scroll {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scroll-item {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+

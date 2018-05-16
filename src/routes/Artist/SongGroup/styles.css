@@ -1,0 +1,13 @@
+.container {
+  width: 80%;
+  margin: 100px auto;
+}
+
+.track {
+  height: 200px;
+}
+
+.song-img {
+  height: 100%;
+  width: auto;
+}
