@@ -1,0 +1,34 @@
+.container {
+  height: 200px;
+  width: 45%;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 5px 10px 5px 6px #cccccc;
+}
+a {
+  width: auto;
+  margin: auto 25px;
+  height: 75%;
+  display: inline-block;
+}
+
+.song-img {
+  box-shadow: 5px 10px 5px 6px #cccccc;
+  border-radius: 15px;
+  height: 100%;
+  width: auto;
+  display: inline-block;
+}
+
+.title {
+  margin: 0 auto;
+  font-family: helvitiva-nue;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.popularity {
+  margin: auto 10px 10px auto;
+}
+

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import Festival from './Festival'
-import './styles.css'
+import styles from './styles.css'
 
 export default class FestivalCategory extends Component {
     constructor(props) {
@@ -13,17 +13,17 @@ export default class FestivalCategory extends Component {
     }
 
     async componentDidMount() {
-        const festivals = await axios(`/api/festivals?category=${this.props.category}`).then(r => r.data)
+        const festivals = await axios(`${SERVER_ADDRESS}/api/festivals?category=${this.props.category}`).then(r => r.data)
         this.setState({ festivals })
     }
 
     render() {
         return (
-          <div className="container">
+          <div className={styles.container}>
             <h2>{ this.props.category }</h2>
-            <div className="scroll">
+            <div className={styles.scroll}>
               { this.state.festivals.length > 0 ? this.state.festivals.map(f => (
-                  <Festival {...f} className="scroll-item"/>
+                  <Festival {...f} className={styles['scroll-item']}/>
               )) : null}
             </div>
           </div>

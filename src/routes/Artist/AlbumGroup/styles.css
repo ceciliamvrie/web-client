@@ -1,7 +1,7 @@
 .title {
+  font-family: helvitica-nue;
   font-size: 2em;
   font-weight: bold;
-  font-family: helvitica-nue;
 }
 
 .container {
@@ -10,7 +10,8 @@
   margin: 100px auto;
 }
 
-.track-container {
+.album-container {
   display: flex;
   flex-wrap: wrap;
 }
+

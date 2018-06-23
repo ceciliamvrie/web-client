@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
-import './styles.css'
+import styles from './styles.css'
+import Song from './Song'
 
 export default class SongGroup extends Component {
   render() {
     const { tracks, title } = this.props
     console.log('Tracks ', tracks)
     return (
-      <div className='container'>
-      <span className='title'>{ title }</span>
-      {
-        tracks && tracks && tracks.map(t => (
-          <div className='track'>
-            <img className='song-img' src={ t.album.imgSrc } alt={ t.name } />
-            <a href={ t.externalUrl } >
-              <div className="song-name">{ t.name.toUpperCase() }</div>
-            </a>
-            <div>poularity score: { t.popularity }</div>
-          </div>
-        ))
-      }
+      <div className={ styles.container } >
+      <span className={ styles.title } >{ title }</span>
+      <div className={ styles['track-container']  } >
+        {
+          tracks && tracks.length && tracks.map(t => (
+            <Song {...t} />
+          ))
+        }
+      </div>
       </div>
     );
   }
 }
+

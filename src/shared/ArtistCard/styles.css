@@ -1,0 +1,43 @@
+.a {
+  height: 250px;  
+  width: 250px;  
+  margin: 0 auto;
+}
+
+.img {
+  width: 85%;
+  height: 250px;
+  margin: 15px 7.5% 0px;
+  object-fit: cover;
+}
+
+.card {
+  width: 250px;
+  height: 365px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 40px;
+}
+
+.card-big {
+  box-shadow: 5px 10px 5px 6px #cccccc;
+  margin: 100px 30px 200px 200px;
+  width: 400px;
+  height: auto;
+  display: inline-block;
+  overflow: hidden;
+  background-color: white;
+}
+
+.caption {
+  text-align: center;
+  font-weight: bold;
+  font-family: helvitica-nue;
+  height: 110px;
+}
+
+.stars {
+  display: inline-block;
+  margin: auto auto auto 10px;
+  z-index: 1;
+}

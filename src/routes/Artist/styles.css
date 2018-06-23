@@ -1,5 +1,27 @@
-.artist-card {
-  box-shadow: 5px 10px 5px 6px #cccccc;
-  margin: 80px 300px;
+.main-content {
+  padding-top: 80px;
 }
 
+.cover {
+  display: flex;
+  align-items: flex-start;
+}
+
+.artist-img {
+  box-shadow: 5px 10px 5px 6px #cccccc;
+  margin: 120px 30px auto 200px;
+  width: 400px;
+  height: auto;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.name {
+  font-size: 5em;  
+  font-family: helvitica-nue;
+  margin: 120px auto auto;
+}
+
+.popularity {
+  font-size: 1.5em;
+}

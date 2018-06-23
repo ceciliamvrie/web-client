@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Header from '../../shared/Header'
 import Lineup from './Lineup'
-import './styles.css'
+import styles from './styles.css'
 
 export default class Festival extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class Festival extends Component {
   }
 
   async componentDidMount() {
-    const festival = await axios('/api/festivals/' + this.props.match.params.name).then(r => r.data)
+    const festival = await axios(`${SERVER_ADDRESS}/api/festivals/` + this.props.match.params.name).then(r => r.data)
     this.setState({ festival })
   }
 
@@ -30,11 +31,12 @@ export default class Festival extends Component {
     const { name, imgSrc, lineup} = this.state.festival
     return (
       <div>
-        <div >
-          <img src={ imgSrc } alt={ name } />
+        <Header />
+        <div className={ styles['main-content'] } >
+          <img className={ styles.img } src={ imgSrc } alt={ name } />
           { name }
-        </div>
         <Lineup lineup={ lineup } />
+        </div>
       </div>
     );
   }

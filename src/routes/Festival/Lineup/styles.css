@@ -1,16 +1,10 @@
-.title {
-  font-size: 2em;
-  font-weight: bold;
-  font-family: helvitica-nue;
-}
-
 .container {
   width: 80%;
   align-items: center;
   margin: 100px auto;
 }
 
-.track-container {
+.artists {
   display: flex;
   flex-wrap: wrap;
 }
