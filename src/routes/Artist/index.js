@@ -5,6 +5,7 @@ import SongGroup from './SongGroup'
 import AlbumGroup from './AlbumGroup'
 import Related from './Related'
 import styles from './styles.css'
+import propTypes from 'prop-types'
 
 export default class Artist extends Component {
   constructor(props) {
@@ -22,12 +23,10 @@ export default class Artist extends Component {
   async componentDidMount() {
     const { name } = this.props.match.params
     const artist = await axios(`${SERVER_ADDRESS}/api/artists/${name}`).then(r => r.data).catch(console.log)
-    console.log('artist: ', artist)
     this.setState({ artist })
   }
 
   render() {
-    console.log('artist: ', this.state.artist)
     const { name, imgSrc, topTracks, popularity, relatedArtists, externalUrl, albums } = this.state.artist
     return (
       <div>
@@ -61,4 +60,37 @@ function stars(popularity) {
     arr.push('🌟')
   }
   return arr.join(' ')
+}
+
+Artist.propTypes = {
+  name: propTypes.string,
+  imgSrc: propTypes.string,
+  popularity: propTypes.number,
+  externalUrl: propTypes.string,
+  topTracks: propTypes.arrayOf(
+    propTypes.shape({
+      name: propTypes.string,
+      externalUrl: propTypes.string,
+      popularity: propTypes.number,
+      album: propTypes.shape({
+        name: propTypes.string,
+        imgSrc: propTypes.string,
+        externalUrl: propTypes.string,
+      }),
+    })
+  ),
+  albums: propTypes.arrayOf(
+    propTypes.shape({
+      name: propTypes.string,
+      imgSrc: propTypes.string,
+      externalUrl: propTypes.string,
+    }),
+  ),
+  relatedArtists: propTypes.arrayOf(
+    propTypes.shape({
+      name: propTypes.string,
+      imgSrc: propTypes.string,
+      popularity: propTypes.number
+    })
+  ),
 }

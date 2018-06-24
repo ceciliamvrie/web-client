@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './styles.css'
+import propTypes from 'prop-types'
 
 export default class Album extends Component {
   render() {
@@ -15,4 +16,10 @@ export default class Album extends Component {
       </div>
     );
   }
+}
+
+Album.propTypes = {
+    name: propTypes.string,
+    imgSrc: propTypes.string,
+    externalUrl: propTypes.string,
 }

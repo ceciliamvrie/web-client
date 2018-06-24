@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styles from './styles.css'
+import propTypes from 'prop-types'
 
 export default class ArtistCard extends PureComponent {
   render() {
@@ -25,4 +26,11 @@ function stars(popularity) {
     arr.push('🌟')
   }
   return arr.join(' ')
+}
+
+ArtistCard.propTypes = {
+  name: propTypes.string,
+  imgSrc: propTypes.string,
+  popularity: propTypes.number,
+  size: propTypes.string,
 }

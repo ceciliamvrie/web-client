@@ -5,9 +5,9 @@
   "author": "Rodolfo Rodriguez <mail@rodolfor.com> (http://rodolfor.com/)",
   "license": "MIT",
   "scripts": {
-    "start": "serve -s dist",
+    "start": "rm -rf dist && npm run build && serve -s dist",
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --history-api-fallback"
   },
   "dependencies": {
     "axios": "^0.18.0",

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './styles.css'
+import propTypes from 'prop-types'
 
 export default class Song extends Component {
   render() {
@@ -33,4 +34,15 @@ function stars(popularity) {
     arr.push('🌟')
   }
   return arr.join(' ')
+}
+
+Song.propTypes = {
+  name: propTypes.string,
+  externalUrl: propTypes.string,
+  popularity: propTypes.number,
+  album: propTypes.shape({
+    name: propTypes.string,
+    imgSrc: propTypes.string,
+    externalUrl: propTypes.string,
+  }),
 }
