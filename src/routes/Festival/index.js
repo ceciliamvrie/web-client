@@ -3,6 +3,7 @@ import axios from 'axios'
 import Header from '../../shared/Header'
 import Lineup from './Lineup'
 import styles from './styles.css'
+import propTypes from 'prop-types'
 
 export default class Festival extends Component {
   constructor(props) {
@@ -40,4 +41,16 @@ export default class Festival extends Component {
       </div>
     );
   }
+}
+
+Festival.propTypes = {
+  name: propTypes.string,
+  imgSrc: propTypes.string,
+  lineup: propTypes.arrayOf(
+    propTypes.shape({
+      name: propTypes.string,
+      imgSrc: propTypes.string,
+      popularity: propTypes.number
+    })
+  )
 }

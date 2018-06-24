@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import axios from 'axios'
 import Festival from './Festival'
 import styles from './styles.css'
@@ -23,7 +23,11 @@ export default class FestivalCategory extends Component {
             <h2>{ this.props.category }</h2>
             <div className={styles.scroll}>
               { this.state.festivals.length > 0 ? this.state.festivals.map(f => (
-                  <Festival {...f} className={styles['scroll-item']}/>
+                  <Festival
+                    {...f}
+                    className={styles['scroll-item']}
+                    key={f.name}
+                  />
               )) : null}
             </div>
           </div>
@@ -32,7 +36,7 @@ export default class FestivalCategory extends Component {
 }
 
 
-FestivalCategory.PropTypes = {
-    category: PropTypes.string
+FestivalCategory.propTypes = {
+    category: propTypes.string
 }
 

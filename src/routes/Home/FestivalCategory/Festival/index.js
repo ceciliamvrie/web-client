@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './styles.css'
+import propTypes from 'prop-types'
 
 export default class Festival extends Component {
   render() {
@@ -15,5 +16,17 @@ export default class Festival extends Component {
       </div>
     );
   }
+}
+
+Festival.propTypes = {
+    name: propTypes.string,
+    imgSrc: propTypes.string,
+    startDate: propTypes.string,
+    endDate: propTypes.string,
+    location: propTypes.shape({
+      country: propTypes.string,
+      state: propTypes.string,
+      city: propTypes.string
+    }),
 }
 
