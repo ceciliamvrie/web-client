@@ -8,11 +8,11 @@ export default class Related extends Component {
     const { artists } = this.props
     return (
       <div className={ styles.container } >
-      <span className={ styles.title } >Related Artists</span>
+      <div className={ styles.title } >Related Artists</div>
       <div className={ styles.artists } >
         {
-          artists && artists.length && artists.map(a => (
-            <ArtistCard { ...a } />
+          artists && artists.length && artists.map((a, i) => (
+            <ArtistCard { ...a } index={i}/>
           ))
         }
         </div>

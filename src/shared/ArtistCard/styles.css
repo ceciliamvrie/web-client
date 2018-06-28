@@ -1,43 +1,62 @@
-.a {
-  height: 250px;  
-  width: 250px;  
-  margin: 0 auto;
-}
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
 
-.img {
-  width: 85%;
-  height: 250px;
-  margin: 15px 7.5% 0px;
-  object-fit: cover;
+.container {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 270px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+  margin: 5px;
 }
 
 .card {
-  width: 250px;
-  height: 365px;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 40px;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 5px 10px 3px 3px #bbb;
+  height: 100%;
+  width: 100%;
 }
 
-.card-big {
-  box-shadow: 5px 10px 5px 6px #cccccc;
-  margin: 100px 30px 200px 200px;
-  width: 400px;
-  height: auto;
+.card::after {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  height: 23px;
+}
+
+.card-a {
+  display: block;
+  background-color: #fbfbfb;
+}
+
+.card-img {
+  border: thin solid #676767;
   display: inline-block;
-  overflow: hidden;
-  background-color: white;
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  margin: 15px auto;
 }
 
-.caption {
+.label {
+  position: absolute;
+  bottom: 25px;
+}
+
+.label-h1 {
+  color: #252525;
+  margin: 5px auto;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
   text-align: center;
-  font-weight: bold;
-  font-family: helvitica-nue;
-  height: 110px;
+  letter-spacing: 0.05em;
+  font-family: 'Permanent Marker', cursive;
 }
 
-.stars {
-  display: inline-block;
-  margin: auto auto auto 10px;
-  z-index: 1;
-}

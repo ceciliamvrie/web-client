@@ -10,9 +10,9 @@ export default class Album extends Component {
         <a target='_blank' href={ externalUrl } className={ styles.a }>
           <img src={ imgSrc } className={ styles.img } />
         </a>
-          <span className={ styles.title }>
+          <div className={ styles.title }>
             { name.toUpperCase() } 
-          </span>
+          </div>
       </div>
     );
   }

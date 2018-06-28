@@ -13,7 +13,8 @@ export default class FestivalCategory extends Component {
     }
 
     async componentDidMount() {
-        const festivals = await axios(`${SERVER_ADDRESS}/api/festivals?category=${this.props.category}`).then(r => r.data)
+        const festivals = await axios(`${SERVER_ADDRESS}/api/festivals?category=${this.props.category}&limit=8`)
+          .then(r => r.data)
         this.setState({ festivals })
     }
 

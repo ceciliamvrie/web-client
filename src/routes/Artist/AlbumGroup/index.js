@@ -8,7 +8,7 @@ export default class AlbumGroup extends Component {
     const { albums } = this.props
     return (
       <div className={ styles.container } >
-      <span className={ styles.title } >Albums</span>
+      <div className={ styles.title } >Albums</div>
       <div className={ styles['album-container']  } >
         {
           albums && albums.length && albums.slice(0, 4).map(album => (
