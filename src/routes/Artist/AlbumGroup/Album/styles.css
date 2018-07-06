@@ -1,14 +1,14 @@
 .container {
-  width: 300px;
+  width: 20%;
   height: 365px;
-  margin: 20px 40px 20px auto;
+  margin: 0 auto;
   display: inline-block;
 }
 
 .a {
-  height: 300px;  
-  width: 300px;  
-  margin: 0 auto 15px;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .img {
@@ -20,9 +20,8 @@
 }
 
 .title {
-  padding: 20px;
-  font-family: helvitica-nue;
-  margin: 20px;
   text-align: center;
-  font-size: 25px;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 15px auto auto 5px;
 }

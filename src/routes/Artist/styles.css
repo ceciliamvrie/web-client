@@ -1,5 +1,9 @@
 .main-content {
-  padding-top: 80px;
+  margin: 0 auto;
+  padding-top: 90px;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 1024px;
 }
 
 .cover {
@@ -9,17 +13,16 @@
 
 .artist-img {
   box-shadow: 5px 10px 5px 6px #cccccc;
-  margin: 120px 30px auto 200px;
-  width: 400px;
+  margin: auto;
+  width: 300px;
   height: auto;
   display: inline-block;
   overflow: hidden;
 }
 
 .name {
-  font-size: 5em;  
-  font-family: helvitica-nue;
-  margin: 120px auto auto;
+  font-size: 3em;  
+  font-weight: bold;
 }
 
 .popularity {

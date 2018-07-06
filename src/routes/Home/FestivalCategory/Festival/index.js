@@ -8,9 +8,11 @@ export default class Festival extends Component {
     return (
       <div className={ styles.card }>
         <a href={ '/festivals/' + name.split(' ').join('-').toLowerCase()}>
-          <img className={ styles.img } src={ imgSrc } alt={ name } />
+          <div className={ styles['img-container'] } >
+            <img className={ styles.img } src={ imgSrc } alt={ name } />
+          </div>
           <div className={ styles.caption }>
-            <h3>{ name }</h3>
+            <span>{ name }</span>
           </div>
         </a>
       </div>

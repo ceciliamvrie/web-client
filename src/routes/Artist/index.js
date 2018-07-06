@@ -30,36 +30,29 @@ export default class Artist extends Component {
     const { name, imgSrc, topTracks, popularity, relatedArtists, externalUrl, albums } = this.state.artist
     return (
       <div>
-        <Header className={ styles['main-content'] } />
-        <div>
+        <Header />
+        <div className={ styles['main-content'] }>
+
           <div className={ styles.cover } >
             <a target='_blank' href={ externalUrl } className={ styles['artist-a'] }>
               <img className={ styles['artist-img']} src={ imgSrc } alt={ name }/>
             </a>
             <div>
               <div className={ styles.name } >{ name }</div>
-              <div className={ styles.popularity } >{ stars(popularity) }</div>
             </div>
           </div>
+
           <div>
             <SongGroup title='Popular' tracks={ topTracks.slice(0, 4) }/>
             <SongGroup title='Recent' tracks={ topTracks.slice(0, 4)  }/>
             <AlbumGroup albums={ albums }/>
             <Related artists={ relatedArtists }/>
           </div>
+
         </div>
       </div>
     );
   }
-}
-
-function stars(popularity) {
-  const count = popularity/20
-  let arr = []
-  for(let i=0; i<count; i++) {
-    arr.push('🌟')
-  }
-  return arr.join(' ')
 }
 
 Artist.propTypes = {

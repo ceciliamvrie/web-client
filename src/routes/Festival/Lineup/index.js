@@ -10,8 +10,8 @@ export default class Lineup extends PureComponent {
         <div className={ styles.artists }>
         {
           this.props.lineup && this.props.lineup.length  &&
-          this.props.lineup.map(artist => (
-            <ArtistCard { ...artist } key={ artist.name }/>
+          this.props.lineup.map((artist, i) => (
+            <ArtistCard { ...artist } index={i} key={ artist.name }/>
           ))
         }
         </div>
