@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import ArtistCard from '../../../shared/ArtistCard'
+import { ArtistCard } from '../../../shared'
 import styles from './styles.css'
 import propTypes from 'prop-types'
 

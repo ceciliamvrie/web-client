@@ -1,24 +1,25 @@
 .container {
+  height: 100vh;
+  top: 200px;
   width: 100%;
-  display: table;
-  height: 75px;
-  position: fixed;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(228, 228, 228);
+  background-color: #cccc;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  background: url(https://images.pexels.com/photos/167591/pexels-photo-167591.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1000);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.cell-1 { 
-  display: table-cell;
-  vertical-align: middle;
+.searchBar {
+  position: relative;
+  display: flex;
+  margin: auto 12%;
+  width: 50vw;
+  height: 60px;
+  border: thin solid #808080b8;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 15px 46px rgba(26, 26, 29, 0.3), 0 15px 90px rgba(0, 0, 0, 0.2);
 }
-
-.logo {
-  margin-left: 60px;
-}
-
-.search-container {
-  display: table-cell;
-  width: 100%;
-  vertical-align: middle;
-}
-

@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const outputDirectory = 'dist';
 
+console.log('path: ', path.join(__dirname, './public/index.html'))
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -43,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: path.join(__dirname, './public/index.html')
     }),
     new webpack.DefinePlugin({
       "SERVER_ADDRESS": JSON.stringify(process.env.SERVER_ADDRESS)

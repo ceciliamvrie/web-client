@@ -6,6 +6,8 @@ import Artist from './Artist'
 
 export default class RootRouter extends Component {
   render() {
+    console.log('rendering route')
+
     return (
       <Router>
           <div>

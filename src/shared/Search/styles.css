@@ -1,0 +1,44 @@
+.container {
+  display: block;
+  position: absolute;
+  top: 10px;
+  margin-left: 30px;
+  width: 500px;
+  height: 40px;
+  border: thin solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  box-shadow: 0 15px 46px rgba(26, 26, 29, 0.3), 0 15px 90px rgba(0, 0, 0, 0.2);
+}
+
+.container:hover {
+  box-shadow: 5px 5px 5px 6px #cccccc;
+  cursor: pointer;
+}
+
+input {
+  color: #484848;
+  background-color: transparent;
+  border: 0px;
+  padding: 11px;
+  font-weight: bold;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  width: 100%;
+  outline-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchButton {
+  background-color: #fbfbfb;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 5px;
+}

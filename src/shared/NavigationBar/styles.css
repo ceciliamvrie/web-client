@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  display: table;
+  height: 75px;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 0px 0px #3833330f;
+}
+
+.cell-1 { 
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.logo {
+  margin-left: 60px;
+}
+
+.search-container {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+

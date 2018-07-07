@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Header from '../../shared/Header'
+import { Header } from '../../shared'
 import Lineup from './Lineup'
 import styles from './styles.css'
 import propTypes from 'prop-types'
@@ -32,7 +32,7 @@ export default class Festival extends Component {
     const { name, imgSrc, lineup} = this.state.festival
     return (
       <div>
-        <Header />
+        <Header /> 
         <div className={ styles['main-content'] } >
           <img className={ styles.img } src={ imgSrc } alt={ name } />
           { name }
