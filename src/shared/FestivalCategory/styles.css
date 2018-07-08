@@ -1,0 +1,27 @@
+.scroll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 100px;
+}
+
+.category {
+  margin: 0;
+}
+
+.item-scroll {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.scroll-item {
+  max-height: 166px;
+  width: calc(100% -247px);
+  height: calc(100% - 166px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  border-radius: 3px;
+}

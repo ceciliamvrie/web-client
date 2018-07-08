@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { ArtistCard } from '../../../shared'
+import Festival from '../../../shared/Festival'
 import styles from './styles.css'
 import propTypes from 'prop-types'
 
@@ -9,10 +9,10 @@ export default class Lineup extends PureComponent {
       <div className={ styles.continer }>
         <div className={ styles.artists }>
         {
-          this.props.lineup && this.props.lineup.length  &&
+          this.props.lineup ?
           this.props.lineup.map((artist, i) => (
-            <ArtistCard { ...artist } index={i} key={ artist.name }/>
-          ))
+            <Festival { ...artist } index={i} key={ artist.name } className={styles.card}/>
+          )) : null
         }
         </div>
       </div>

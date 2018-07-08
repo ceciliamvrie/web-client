@@ -14,7 +14,7 @@
 .img {
   width: 100%;
   height: auto;
-  box-shadow: 5px 10px 5px 6px #cccccc;
+  box-shadow: 5px 5px 5px 0px #cccccc;
   border-radius: 15px;
   object-fit: cover;
 }

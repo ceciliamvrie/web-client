@@ -4,10 +4,11 @@
 }
 
 .container {
-  align-items: center;
+  margin: 0 auto;
 }
 
 .artists {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }

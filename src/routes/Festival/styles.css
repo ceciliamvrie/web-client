@@ -1,9 +1,8 @@
 .main-content {
+  max-width: 80%; 
+  padding-top: 15px;
   margin: 0 auto;
-  padding-top: 80px;
-  padding-left: 24px;
-  padding-right: 24px;
-  max-width: 1080px;
+  padding-top: 150px;
 }
 
 .img {
@@ -11,4 +10,11 @@
   width: 500px;
   margin: 80px;
   display: 'block';
+}
+
+.festivalSearch {
+  width: 50%;
+  display: flex;
+  border: #00000014 1px solid;
+  border-radius: 5px;
 }

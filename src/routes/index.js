@@ -6,14 +6,12 @@ import Artist from './Artist'
 
 export default class RootRouter extends Component {
   render() {
-    console.log('rendering route')
-
     return (
       <Router>
           <div>
               <Route exact path="/festivals/:name" component={Festival}/>
-              <Route exact path="/" component={Home}/>
               <Route exact path="/artists/:name" component={Artist}/>
+              <Route exact path="/" component={Home}/>
           </div>
       </Router>
     )

@@ -2,6 +2,8 @@
   width: 80%;
   align-items: center;
   margin: 100px auto;
+  flex-direction: row;
+  display: flex;
 }
 
 .artists {

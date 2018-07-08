@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Header from '../../shared/Header'
+import { Header, NavigationBar, Search } from '../../shared'
 import SongGroup from './SongGroup'
 import AlbumGroup from './AlbumGroup'
 import Related from './Related'
@@ -22,17 +22,20 @@ export default class Artist extends Component {
 
   async componentDidMount() {
     const { name } = this.props.match.params
-    const artist = await axios(`${SERVER_ADDRESS}/api/artists/${name}`).then(r => r.data).catch(console.log)
-    this.setState({ artist })
+    await axios(`${SERVER_ADDRESS}/api/artists/${name}`)
+      .then(({ data }) => this.setState({ artist: data }))
+      .catch(console.log)
+    
   }
 
   render() {
     const { name, imgSrc, topTracks, popularity, relatedArtists, externalUrl, albums } = this.state.artist
     return (
       <div>
-        <Header />
+        <NavigationBar>
+         <Search className={styles.artistSearch}/>
+        </NavigationBar>
         <div className={ styles['main-content'] }>
-
           <div className={ styles.cover } >
             <a target='_blank' href={ externalUrl } className={ styles['artist-a'] }>
               <img className={ styles['artist-img']} src={ imgSrc } alt={ name }/>
@@ -41,14 +44,12 @@ export default class Artist extends Component {
               <div className={ styles.name } >{ name }</div>
             </div>
           </div>
-
           <div>
-            <SongGroup title='Popular' tracks={ topTracks.slice(0, 4) }/>
-            <SongGroup title='Recent' tracks={ topTracks.slice(0, 4)  }/>
+            <SongGroup title='Popular Songs' tracks={ topTracks.slice(0, 4) }/>
+            <SongGroup title='Most Recent Songs' tracks={ topTracks.slice(0, 4)  }/>
             <AlbumGroup albums={ albums }/>
             <Related artists={ relatedArtists }/>
           </div>
-
         </div>
       </div>
     );

@@ -3,8 +3,9 @@
   display: table;
   height: 75px;
   position: fixed;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   box-shadow: 0px 4px 0px 0px #3833330f;
+  z-index: 1;
 }
 
 .cell-1 { 
@@ -14,11 +15,5 @@
 
 .logo {
   margin-left: 60px;
-}
-
-.search-container {
-  display: table-cell;
-  width: 100%;
-  vertical-align: middle;
 }
 

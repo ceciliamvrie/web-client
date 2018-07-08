@@ -1,9 +1,5 @@
-.main-content {
-  position: absolute;
-  top: 500px;
-  height: 500px;
-  width: 100%; 
-  background: gold;
-  opacity: 0.8;
-  padding-top: 100px;
+.mainContent {
+  width: 80%; 
+  padding-top: 15px;
+  margin: 0 auto;
 }

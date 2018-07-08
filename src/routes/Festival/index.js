@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import axios from 'axios'
-import { Header } from '../../shared'
-import Lineup from './Lineup'
+import { Header, NavigationBar, Search } from '../../shared'
+import FestivalCategory from '../../shared/FestivalCategory'
 import styles from './styles.css'
-import propTypes from 'prop-types'
 
 export default class Festival extends Component {
   constructor(props) {
@@ -24,33 +23,26 @@ export default class Festival extends Component {
   }
 
   async componentDidMount() {
-    const festival = await axios(`${SERVER_ADDRESS}/api/festivals/` + this.props.match.params.name).then(r => r.data)
-    this.setState({ festival })
+    const festival = await axios(`${SERVER_ADDRESS}/api/lineup/` + this.props.match.params.name)
+    .then(({ data }) => this.setState({ festival: data }))
+    .catch(console.error)
   }
 
   render() {
     const { name, imgSrc, lineup} = this.state.festival
     return (
-      <div>
-        <Header /> 
-        <div className={ styles['main-content'] } >
-          <img className={ styles.img } src={ imgSrc } alt={ name } />
-          { name }
-        <Lineup lineup={ lineup } />
+      <Fragment>
+        <NavigationBar>
+          <Search className={styles.festivalSearch}/>
+        </NavigationBar>
+        <div className={styles['main-content']}>
+          {
+            this.state.festival.lineup.map(({category, lineup}) => (
+              <FestivalCategory type="artists" category={category + "Artists"} items={lineup} />
+            ))
+          }
         </div>
-      </div>
+      </Fragment>
     );
   }
-}
-
-Festival.propTypes = {
-  name: propTypes.string,
-  imgSrc: propTypes.string,
-  lineup: propTypes.arrayOf(
-    propTypes.shape({
-      name: propTypes.string,
-      imgSrc: propTypes.string,
-      popularity: propTypes.number
-    })
-  )
 }
